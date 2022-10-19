@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This a Migration to add foreign keys to Posts  table
 class AddUserRefToPosts < ActiveRecord::Migration[7.0]
   def change
