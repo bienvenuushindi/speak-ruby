@@ -1,4 +1,3 @@
-
 # This a Migration for Likes table
 class CreateLikes < ActiveRecord::Migration[7.0]
   def change
