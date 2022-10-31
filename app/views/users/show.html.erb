@@ -23,7 +23,7 @@
       <% if defined?(comments) && comments  %>
         <ul>
           <!--        recent_comments-->
-          <% post.recent_comments.each_with_index do |comment| %>
+          <% post.recent_comments.each do |comment| %>
             <li>
               <h6><%= comment.author.name %></h6>
               <p>
@@ -35,4 +35,9 @@
       <% end %>
     </li>
   <% end %>
+  <% if defined?(comments) && comments  %>
+    <button>Pagination</button>
+  <%else %>
+    <button>See All Project</button>
+  <%end %>
 </ul>
