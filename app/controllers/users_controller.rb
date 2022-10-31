@@ -5,11 +5,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  def find_post_by
 
-  end
+  def show_posts_comments
+    @user = User.find(params[:id])
 
-  def find_posts
-
+    render template: 'users/show', locals: { comments: true }
   end
 end
