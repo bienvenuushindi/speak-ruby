@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "/users", to: "users#index" # usually requires a view
   # get "/users/new", to: "users#new" # usually requires a view
   get "/users/:id", to: "users#show" # usually requires a view
-  get "/users/:id/posts/:post_id", to: "users#find_post_by" # single post for user id
-  get "/users/:id/posts", to: "users#find_posts" # single post for user id
+  get "/users/:id/posts/:post_id", to: "posts#show" # single post for user id
+  get "/users/:id/posts", to: "users#show_posts_comments" # single post for user id
   # post "/users", to: "users#create"  # usually a submitted form
   # get "/users/:id/edit", to: "users#edit" # usually requires a view
   # put "/users/:id", to: "users#update" # usually a submitted form
