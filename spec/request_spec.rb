@@ -27,7 +27,7 @@ RSpec.describe 'UsersController', type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'render the list of users' do
+    it 'renders view to show specific user details' do
       expect(response).to render_template(:show)
     end
 
@@ -48,7 +48,7 @@ RSpec.describe 'PostsController', type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'render the list of users' do
+    it 'render the list of posts' do
       expect(response).to render_template(:index)
     end
 
@@ -67,7 +67,7 @@ RSpec.describe 'PostsController', type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'render the list of users' do
+    it 'renders view to show specific post details' do
       expect(response).to render_template(:show)
     end
 
