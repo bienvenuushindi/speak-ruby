@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'UsersController', :type => :request do
+RSpec.describe 'UsersController', type: :request do
   describe 'get#index' do
     before(:example) do
       get '/users'
@@ -37,7 +37,7 @@ RSpec.describe 'UsersController', :type => :request do
   end
 end
 
-RSpec.describe 'PostsController', :type => :request do
+RSpec.describe 'PostsController', type: :request do
   subject { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Full Stack Developer.', posts_counter: 0) }
   describe 'get#index' do
     before(:example) do
@@ -58,8 +58,8 @@ RSpec.describe 'PostsController', :type => :request do
   end
   describe 'get#show' do
     before(:example) do
-      first_post = Post.create(author: subject, title: 'Hello', text: 'This is my first post',likes_counter: 0,
-                                   comments_counter: 0)
+      first_post = Post.create(author: subject, title: 'Hello', text: 'This is my first post', likes_counter: 0,
+                               comments_counter: 0)
       get "/users/#{subject.id}/posts/#{first_post.id}"
     end
 
