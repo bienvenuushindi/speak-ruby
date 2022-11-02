@@ -1,26 +1,33 @@
-<div class="card">
-  <%= image_tag ("#{@user.photo}") %>
-  <h2><%= @user.name %></h2>
-  <p>Number of posts: <%= @user.posts_counter %></p>
-</div>
-<div class="card">
-  <h2>Bio</h2>
-  <p> <%= @user.bio %></p>
-</div>
+<div class="list-box">
+  <h1 class="leading header">USER POSTS</h1>
+  <div class="card row">
+    <%= image_tag(@user.photo, class: "portrait") %>
+    <div class="d-flex flex-column justify-space-between w-100">
+      <h2 class="header text-start"><%= @user.name %></h2>
+      <p class="text-end text-light">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Bio</h2>
+    <p> <%= @user.bio %></p>
+  </div>
 
-<!--recent_posts-->
-<ul id="user_posts">
-  <% @user.recent_posts.each_with_index do |post,index| %>
-    <li>
-      <div class="card">
-        <h2><%= post.title %> #<%= (index + 1) %></h2>
-        <p><%= post.text %></p>
-        <div>
+  <!--recent_posts-->
+  <ul id="user_posts">
+    <% @user.recent_posts.each_with_index do |post, index| %>
+      <li>
+        <div class="card d-flex flex-column justify-space-between w-100">
+          <h2 class="header text-start"><%= post.title %> #<%= (index + 1) %></h2>
+          <p><%= post.text %></p>
+          <div class="d-flex gap-1 justify-content-end">
             <div>Comments <span><%= post.comments_counter %></span></div>
             <div>Likes <span><%= post.likes_counter %></span></div>
+          </div>
         </div>
-      </div>
-    </li>
-  <% end %>
-    <button>See All Project</button>
-</ul>
+      </li>
+    <% end %>
+  </ul>
+  <div class="text-cent mt-5">
+    <button class="btn btn-default mx-auto">See All Project</button>
+  </div>
+</div>
