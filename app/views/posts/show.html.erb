@@ -1,21 +1,27 @@
-<div>
-  <div class="card">
-    <h2><%= @post.title %></h2>
-    <p><%= @post.text %></p>
-    <div>
-      <div>Comments <span><%= @post.comments_counter %></span></div>
-      <div>Likes <span><%= @post.likes_counter %></span></div>
+<div class="list-box">
+  <h1 class="leading header">POST DETAILS</h1>
+  <div class="card d-flex flex-column justify-space-between w-100">
+    <div class="d-flex justify-space-between">
+      <h2 class="header text-start"><%= @post.title %> by <%= @post.author.name %> </h2>
+      <div class="d-flex gap-1 justify-content-end">
+        <div>Comments <span><%= @post.comments_counter %></span></div>
+        <div>Likes <span><%= @post.likes_counter %></span></div>
+      </div>
     </div>
+    <p><%= @post.text %></p>
   </div>
-    <ul>
+  <% if @post.recent_comments.length.positive? %>
+    <ul class="ml-2">
       <!--        recent_comments-->
-      <% @post.comments.each do |comment| %>
-        <li>
-          <h6><%= comment.author.name %></h6>
-          <p>
+      <li><h3 class="header text-start text-light">Comments</h3></li>
+      <% @post.recent_comments.each do |comment| %>
+        <li class="d-flex">
+          <h4><%= comment.author.name %> : </h4>
+          <p class="ml-1">
             <%= comment.text %>
           </p>
         </li>
       <% end %>
     </ul>
+  <% end %>
 </div>

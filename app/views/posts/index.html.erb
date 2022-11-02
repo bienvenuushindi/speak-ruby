@@ -1,38 +1,46 @@
-<div class="card">
-  <%= image_tag ("#{@user.photo}") %>
-  <h2><%= @user.name %></h2>
-  <p>Number of posts: <%= @user.posts_counter %></p>
-</div>
-<div class="card">
-  <h2>Bio</h2>
-  <p> <%= @user.bio %></p>
-</div>
-
-<!--recent_posts-->
-<ul id="user_posts">
-  <% @user.recent_posts.each_with_index do |post,index| %>
-    <li>
-      <div class="card">
-        <h2><%= post.title %> #<%= (index + 1) %></h2>
-        <p><%= post.text %></p>
-        <div>
-          <div>Comments <span><%= post.comments_counter %></span></div>
-          <div>Likes <span><%= post.likes_counter %></span></div>
+<div class="list-box">
+  <h1 class="leading header">USER POSTS COMMENTS</h1>
+  <div class="card row">
+    <%= image_tag(@user.photo, class: "portrait") %>
+    <div class="d-flex flex-column justify-space-between w-100">
+      <h2 class="header text-start"><%= @user.name %></h2>
+      <p class="text-end text-light">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Bio</h2>
+    <p> <%= @user.bio %></p>
+  </div>
+  <!--recent_posts-->
+  <ul id="user_posts">
+    <% @user.posts.each_with_index do |post, index| %>
+      <li>
+        <div class="card d-flex flex-column justify-space-between w-100">
+          <h2 class="header text-start"><%= post.title %> #<%= (index + 1) %></h2>
+          <p><%= post.text %></p>
+          <div class="d-flex gap-1 justify-content-end">
+            <div>Comments <span><%= post.comments_counter %></span></div>
+            <div>Likes <span><%= post.likes_counter %></span></div>
+          </div>
         </div>
-      </div>
-
-        <ul>
-          <!--        recent_comments-->
-          <% post.recent_comments.each do |comment| %>
-            <li>
-              <h6><%= comment.author.name %></h6>
-              <p>
-                <%= comment.text %>
-              </p>
-            </li>
-          <% end %>
-        </ul>
-    </li>
-  <% end %>
-    <button>Pagination</button>
-</ul>
+        <% if post.recent_comments.length.positive? %>
+          <ul class="ml-2">
+            <!--        recent_comments-->
+            <li><h3 class="header text-start text-light">Comments</h3></li>
+            <% post.recent_comments.each do |comment| %>
+              <li class="d-flex">
+                <h4><%= comment.author.name %> : </h4>
+                <p class="ml-1">
+                  <%= comment.text %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="text-center mt-5">
+    <button class="btn btn-default mx-auto">Pagination</button>
+  </div>
+</div>

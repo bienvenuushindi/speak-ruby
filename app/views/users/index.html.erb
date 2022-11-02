@@ -1,16 +1,20 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>USERS</h1>
-
-<ul id="users">
-  <% @users.each do |user| %>
-    <li>
-      <div class="card">
-        <%= image_tag ("#{user.photo}") %>
-        <h2><%= user.name %></h2>
-        <p>Number of posts: <%= user.posts_counter %></p>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="list-box">
+  <h1 class="leading header">USERS</h1>
+  <ul id="users" >
+    <% @users.each do |user| %>
+      <li class="user-item">
+        <%= link_to "users/#{user.id}" do %>
+        <div class="card row">
+          <%= image_tag(user.photo, class: "portrait") %>
+          <div class="d-flex flex-column justify-space-between w-100">
+            <h2 class="header text-start"><%= user.name %></h2>
+            <p class="text-end text-light">Number of posts: <%= user.posts_counter %></p>
+          </div>
+        </div>
+          <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
