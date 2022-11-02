@@ -13,7 +13,7 @@
   </div>
   <!--recent_posts-->
   <ul id="user_posts">
-    <% @user.recent_posts.each_with_index do |post, index| %>
+    <% @user.posts.each_with_index do |post, index| %>
       <li>
         <div class="card d-flex flex-column justify-space-between w-100">
           <h2 class="header text-start"><%= post.title %> #<%= (index + 1) %></h2>

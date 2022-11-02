@@ -28,6 +28,8 @@
     <% end %>
   </ul>
   <div class="text-cent mt-5">
-    <button class="btn btn-default mx-auto">See All Project</button>
+    <%= link_to "#{@user.id}/posts" do %>
+      <button class="btn btn-default mx-auto">See All Project</button>
+    <% end %>
   </div>
 </div>
