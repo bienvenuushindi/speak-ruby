@@ -124,6 +124,16 @@ body {
   outline: 1px solid #4040ef;
 }
 
+.bordered {
+  border: 1px solid #d3d3d3;
+  padding: .5rem;
+  margin-top: .3rem;
+}
+
+.btn.btn-sm {
+  padding: 2px 4px;
+  font-size: 11px;
+}
 
 @media screen and (min-width: 765px) {
   .container {
@@ -139,7 +149,7 @@ body {
   .list-box {
     box-shadow: -7px 8px 57px 8px rgba(209, 209, 209, 0.75);
     border: 1px solid #dedcdc;
-    width: 60%;
+    width: 90%;
     margin: auto;
     padding: 0.5rem;
     border-radius: 5px;
