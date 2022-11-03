@@ -4,7 +4,7 @@
   <ul id="users" >
     <% @users.each do |user| %>
       <li class="user-item">
-        <%= link_to "users/#{user.id}" do %>
+        <%= link_to user_path(user.id) do %>
         <div class="card row">
           <%= image_tag(user.photo, class: "portrait") %>
           <div class="d-flex flex-column justify-space-between w-100">
