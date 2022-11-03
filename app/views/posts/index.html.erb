@@ -13,7 +13,7 @@
   </div>
   <!--recent_posts-->
   <ul id="user_posts">
-    <% @user.posts.each_with_index do |p, i| %>
+    <% @user.posts_desc.each_with_index do |p, i| %>
       <li class="bordered">
         <%= render 'partials/post_item', post: p, index: i %>
         <% if p.recent_comments.length.positive? %>

@@ -3,10 +3,7 @@
   <div class="card d-flex flex-column justify-space-between w-100">
     <div class="d-flex justify-space-between">
       <h2 class="header text-start"><%= @post.title %> by <%= @post.author.name %> </h2>
-      <div class="d-flex gap-1 justify-content-end">
-        <div>Comments <span><%= @post.comments_counter %></span></div>
-        <div>Likes <span><%= @post.likes_counter %></span></div>
-      </div>
+      <%= render 'partials/comments_likes', post:@post %>
     </div>
     <p><%= @post.text %></p>
   </div>
@@ -14,7 +11,7 @@
     <ul class="ml-2">
       <!--        recent_comments-->
       <li><h3 class="header text-start text-light">Comments</h3></li>
-      <% @post.recent_comments.each do |comment| %>
+      <% @post.comments_desc.each do |comment| %>
         <li class="d-flex">
           <h4><%= comment.author.name %> : </h4>
           <p class="ml-1">
