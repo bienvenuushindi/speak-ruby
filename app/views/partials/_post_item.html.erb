@@ -1,0 +1,16 @@
+<div class="card d-flex flex-column justify-space-between w-100">
+  <h2 class="header text-start"><%= post.title %> #<%= (index + 1) %></h2>
+  <p><%= post.text %></p>
+  <div class="d-flex gap-1 justify-content-end">
+    <div>Comments <span><%= post.comments_counter %></span></div>
+    <div>Likes <span><%= post.likes_counter %></span></div>
+  </div>
+  <div class="text-end mt-2">
+    <%= link_to new_comment_path(params[:id], post.id) do %>
+      <button class="btn btn-default btn-sm mx-auto">Add Comment</button>
+    <% end %>
+    <%= link_to single_post_path(params[:id],post.id) do %>
+      <button class="btn btn-default btn-sm mx-auto">View Post</button>
+    <% end %>
+  </div>
+</div>
