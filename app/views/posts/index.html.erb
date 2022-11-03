@@ -13,21 +13,14 @@
   </div>
   <!--recent_posts-->
   <ul id="user_posts">
-    <% @user.posts.each_with_index do |post, index| %>
-      <li>
-        <div class="card d-flex flex-column justify-space-between w-100">
-          <h2 class="header text-start"><%= post.title %> #<%= (index + 1) %></h2>
-          <p><%= post.text %></p>
-          <div class="d-flex gap-1 justify-content-end">
-            <div>Comments <span><%= post.comments_counter %></span></div>
-            <div>Likes <span><%= post.likes_counter %></span></div>
-          </div>
-        </div>
-        <% if post.recent_comments.length.positive? %>
+    <% @user.posts.each_with_index do |p, i| %>
+      <li class="bordered">
+        <%= render 'partials/post_item', post: p, index: i %>
+        <% if p.recent_comments.length.positive? %>
           <ul class="ml-2">
             <!--        recent_comments-->
             <li><h3 class="header text-start text-light">Comments</h3></li>
-            <% post.recent_comments.each do |comment| %>
+            <% p.recent_comments.each do |comment| %>
               <li class="d-flex">
                 <h4><%= comment.author.name %> : </h4>
                 <p class="ml-1">
