@@ -96,6 +96,35 @@ body {
   border-radius: 5px;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.submit {
+  width: fit-content;
+}
+
+.input-control, .input-area{
+ padding: .5rem .8rem;
+ border: 1px solid #999999;
+ border-radius: 5px;
+}
+
+.input-area {
+  height: 10rem;
+}
+
+.input-control:focus, .input-area:focus{
+  outline: 1px solid #4040ef;
+}
+
+
 @media screen and (min-width: 765px) {
   .container {
     width: 50%;
