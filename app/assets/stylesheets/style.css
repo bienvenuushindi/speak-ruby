@@ -110,29 +110,35 @@ body {
   width: fit-content;
 }
 
-.input-control, .input-area{
- padding: .5rem .8rem;
- border: 1px solid #999999;
- border-radius: 5px;
+.input-control,
+.input-area {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #999;
+  border-radius: 5px;
 }
 
 .input-area {
   height: 10rem;
 }
 
-.input-control:focus, .input-area:focus{
+.input-control:focus,
+.input-area:focus {
   outline: 1px solid #4040ef;
 }
 
 .bordered {
   border: 1px solid #d3d3d3;
-  padding: .5rem;
-  margin-top: .3rem;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 .btn.btn-sm {
   padding: 2px 4px;
   font-size: 11px;
+}
+
+.text-success {
+  color: #b00100;
 }
 
 @media screen and (min-width: 765px) {
