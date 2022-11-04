@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "/", to: "users#index" # usually requires a view
   get "/users", to: "users#index", as: 'users' # usually requires a view
   get "/users/:id", to: "users#show", as: 'user' # usually requires a view
   get "/users/:id/posts/new", to: "posts#new", as: 'new_post'# new post for user id
