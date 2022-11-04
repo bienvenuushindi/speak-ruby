@@ -1,0 +1,12 @@
+<div class="list-box">
+  <h1 class="leading header">ADD COMMENT</h1>
+  <%= form_with method: :post, url: user_posts_comments_path(@current_user.id, params[:post_id]), model: comment, local: true, scope: :comment do |f| %>
+    <div class="form-group">
+      <%= f.label :text %>
+      <%= f.text_area :text, class: 'input-area' %>
+    </div>
+    <div class="text-end mt-2">
+      <%= f.submit 'Add Comment', class: 'btn btn-default submit' %>
+    </div>
+  <% end %>
+</div>

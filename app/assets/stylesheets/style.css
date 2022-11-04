@@ -96,6 +96,51 @@ body {
   border-radius: 5px;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.submit {
+  width: fit-content;
+}
+
+.input-control,
+.input-area {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.input-area {
+  height: 10rem;
+}
+
+.input-control:focus,
+.input-area:focus {
+  outline: 1px solid #4040ef;
+}
+
+.bordered {
+  border: 1px solid #d3d3d3;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.btn.btn-sm {
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+.text-success {
+  color: #b00100;
+}
+
 @media screen and (min-width: 765px) {
   .container {
     width: 50%;
@@ -110,7 +155,7 @@ body {
   .list-box {
     box-shadow: -7px 8px 57px 8px rgba(209, 209, 209, 0.75);
     border: 1px solid #dedcdc;
-    width: 60%;
+    width: 90%;
     margin: auto;
     padding: 0.5rem;
     border-radius: 5px;
