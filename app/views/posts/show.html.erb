@@ -1,5 +1,10 @@
 <div class="list-box">
   <h1 class="leading header">POST DETAILS</h1>
+  <% flash.each do |type, msg| %>
+    <div class="text-success">
+      <%= msg %>
+    </div>
+  <% end %>
   <div class="card d-flex flex-column justify-space-between w-100">
     <div class="d-flex justify-space-between">
       <h2 class="header text-start"><%= @post.title %> by <%= @post.author.name %> </h2>
@@ -20,5 +25,10 @@
         </li>
       <% end %>
     </ul>
+    <div class="text-end mt-2">
+      <%= link_to new_comment_path(params[:id], @post.id) do %>
+        <button class="btn btn-default btn-sm mx-auto">Add Comment</button>
+      <% end %>
+    </div>
   <% end %>
 </div>

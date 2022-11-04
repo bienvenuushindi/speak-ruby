@@ -1,5 +1,10 @@
 <div class="list-box">
   <h1 class="leading header">USER POSTS COMMENTS</h1>
+  <% flash.each do |type, msg| %>
+    <div class="text-success">
+      <%= msg %>
+    </div>
+  <% end %>
   <div class="card row">
     <%= image_tag(@user.photo, class: "portrait") %>
     <div class="d-flex flex-column justify-space-between w-100">
