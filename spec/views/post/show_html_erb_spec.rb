@@ -37,6 +37,9 @@ RSpec.describe 'Post', type: :feature do
     # I can see the comment each commentor left.(a-laarabi)
 
     # I can see the username of each commentor.(michael)
+    it ' I can see the username of each commentor' do
+      expect(page).to have_content(@my_post.comments.first.author.name)
+    end
 
   end
 end
