@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system, js: true do
-  describe 'users index page' do
+RSpec.describe 'Users', type: :feature do
+  describe 'index page' do
     before(:example) do
       @user = User.create(name: 'Tom',
                           photo: 'https://i.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA',
@@ -9,11 +9,11 @@ RSpec.describe 'Users', type: :system, js: true do
       visit users_path
     end
 
-    it 'I can see the names of all users' do
+    scenario 'I can see the names of all users' do
       expect(page).to have_content(@user.name)
     end
 
-    it 'I can see the number of posts for each user' do
+    scenario 'I can see the number of posts for each user' do
       expect(page).to have_content(@user.posts_counter)
     end
 
