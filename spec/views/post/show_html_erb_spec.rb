@@ -34,5 +34,9 @@ RSpec.describe 'Post', type: :feature do
     it 'should show the post body' do
       expect(page).to have_content(@my_post.text)
     end
+    # I can see the comment each commentor left.(a-laarabi)
+
+    # I can see the username of each commentor.(michael)
+
   end
 end
