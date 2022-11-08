@@ -16,7 +16,7 @@
     <ul class="ml-2">
       <!--        recent_comments-->
       <li><h3 class="header text-start text-light">Comments</h3></li>
-      <% @post.comments_desc.includes(:author).each do |comment| %>
+      <% @post.comments_desc.each do |comment| %>
         <li class="d-flex">
           <h4><%= comment.author.name %> : </h4>
           <p class="ml-1">
