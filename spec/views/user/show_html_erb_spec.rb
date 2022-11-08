@@ -49,7 +49,7 @@ RSpec.describe 'User', type: :feature do
     end
 
     # When I click a user's post, it redirects me to that post's show page.
-    it 'should redirect me to that post\'s show page When I click a user\'s post' do
+    it 'should redirect me to that post\'s show page When I click a view\'s post' do
       click_link('View Post', match: :first)
       expect(page).to have_content('POST DETAILS')
     end
