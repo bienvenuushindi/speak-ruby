@@ -67,6 +67,5 @@ RSpec.describe 'Post', type: :feature do
       click_link('Likes', match: :first)
       expect(page).to have_content(@user.posts.first.likes_counter)
     end
-
   end
 end
