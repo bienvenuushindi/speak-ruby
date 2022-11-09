@@ -54,6 +54,12 @@ RSpec.describe 'User', type: :feature do
       expect(page).to have_content('POST DETAILS')
     end
 
+    # When I click a like's post, it increments  like's post by one.
+    it 'should increments  like\'s post by one When I click on like\'s post' do
+      click_link('Likes', match: :first)
+      expect(page).to have_content(@user.posts.first.likes_counter)
+    end
+
     # When I click to see all posts, it redirects me to the user's post's index page.
     it 'should redirect me to the user\'s post\'s index page When I click to see all posts' do
       click_link('See All Posts')

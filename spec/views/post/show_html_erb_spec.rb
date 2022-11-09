@@ -42,5 +42,11 @@ RSpec.describe 'Post', type: :feature do
     it ' I can see the username of each commentor' do
       expect(page).to have_content(@my_post.comments.first.author.name)
     end
+    # When I click a like's post, it increments  like's post by one.
+    it 'should increments  like\'s post by one When I click on like\'s post' do
+      click_link('Likes', match: :first)
+      expect(page).to have_content(@my_post.likes_counter + 1)
+    end
+
   end
 end

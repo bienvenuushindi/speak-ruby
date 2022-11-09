@@ -62,5 +62,11 @@ RSpec.describe 'Post', type: :feature do
       click_link('View Post', match: :first)
       expect(page).to have_content('POST DETAILS')
     end
+    # When I click a like's post, it increments  like's post by one.
+    it 'should increments  like\'s post by one When I click on like\'s post' do
+      click_link('Likes', match: :first)
+      expect(page).to have_content(@user.posts.first.likes_counter)
+    end
+
   end
 end
