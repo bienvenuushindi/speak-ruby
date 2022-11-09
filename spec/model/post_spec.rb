@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe 'Post', type: :model do
   subject do
     Post.new(title: 'My Little Title', user_id: 1, text: 'Hello world, This my first rails app', comments_counter: 45,
              likes_counter: 14)

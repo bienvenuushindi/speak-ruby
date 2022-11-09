@@ -64,6 +64,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'bullet'
 end
 
 group :test do
@@ -74,5 +75,6 @@ group :test do
   gem 'webdrivers'
 end
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
