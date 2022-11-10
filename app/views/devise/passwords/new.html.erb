@@ -5,11 +5,11 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-control', placeholder: "Email Address" %>
   </div>
 
   <div class="actions mt-2">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", class: 'btn btn-default submit' %>
   </div>
 <% end %>
 
