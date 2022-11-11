@@ -1,5 +1,4 @@
 class Api::V1::CommentsController < ApplicationController
-
   def index
     @comments = Comment.where(post_id: read_post_id)
     render json: @comments
@@ -17,7 +16,6 @@ class Api::V1::CommentsController < ApplicationController
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
-
   end
 
   private
