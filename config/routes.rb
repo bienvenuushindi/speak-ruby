@@ -13,4 +13,14 @@ Rails.application.routes.draw do
   get "posts/:post_id/comments/new", to: "comments#new", as: 'new_comment'
   post "posts/:post_id/comments", to: "comments#create", as: 'user_posts_comments'
   get "posts/:post_id/likes", to: "likes#create", as: 'user_posts_likes'
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :users, only: [:index] do
+        resources :posts, only: [:index]
+      end
+      resources :posts, only: [:index] do
+        resources :comments, only: [:create, :index]
+      end
+    end
+  end
 end
