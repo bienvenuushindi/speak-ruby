@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/users/:id/posts/new", to: "posts#new", as: 'new_post'# new post for user id
   get "posts/:post_id", to: "posts#show", as: 'single_post' # single post for user id
   delete "posts/:post_id", to: "posts#destroy" # single post for user id
-  delete "comments/:id", to: "posts#destroy", as: 'single_comment' # single post for user id
+  delete "comments/:id", to: "comments#destroy", as: 'single_comment' # single post for user id
   post "/users/:id/posts", to: "posts#create" # create single post for user id
   get "/users/:id/posts", to: "posts#index", as: 'user_posts' # single post for user id
   get "posts/:post_id/comments/new", to: "comments#new", as: 'new_comment'
