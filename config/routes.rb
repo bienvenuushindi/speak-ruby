@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "posts/:post_id", to: "posts#destroy" # single post for user id
   post "/users/:id/posts", to: "posts#create" # create single post for user id
   get "/users/:id/posts", to: "posts#index", as: 'user_posts' # single post for user id
-  get "/users/:id/posts/:post_id/comments/new", to: "comments#new", as: 'new_comment'
-  post "/users/:id/posts/:post_id/comments", to: "comments#create", as: 'user_posts_comments'
-  get "/users/:id/posts/:post_id/likes", to: "likes#create", as: 'user_posts_likes'
+  get "posts/:post_id/comments/new", to: "comments#new", as: 'new_comment'
+  post "posts/:post_id/comments", to: "comments#create", as: 'user_posts_comments'
+  get "posts/:post_id/likes", to: "likes#create", as: 'user_posts_likes'
 end

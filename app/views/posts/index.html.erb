@@ -27,7 +27,11 @@
             <li><h3 class="header text-start text-light">Comments</h3></li>
             <% p.recent_comments.includes(:author).each do |comment| %>
               <li class="d-flex">
-                <h4><%= comment.author.name %> : </h4>
+                <h4><%= comment.author.name %> :
+                  <% if can? :destroy, User %>
+                    <%= button_to "Delete", single_post_path(post.id), remote: true, data: { confirm: 'Are you sure?' }, method: :delete %>
+                  <% end %>
+                </h4>
                 <p class="ml-1">
                   <%= comment.text %>
                 </p>
