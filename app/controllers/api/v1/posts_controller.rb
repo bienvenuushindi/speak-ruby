@@ -1,14 +1,9 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  
 
   def index
     @posts = Post.where(user_id: read_user_id)
     render json: @posts
-  end
-
-  # GET /post/1
-  def show
-    render json: @post
   end
 
   private
@@ -21,7 +16,5 @@ class Api::V1::PostsController < ApplicationController
     params[:user_id]
   end
 
-  def read_post_id
-    params[:post_id]
-  end
+
 end
