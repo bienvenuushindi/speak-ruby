@@ -1,5 +1,10 @@
 # Model for User Entity
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable
   has_many :posts, inverse_of: 'author'
   has_many :likes, inverse_of: 'author'
   has_many :comments, inverse_of: 'author'

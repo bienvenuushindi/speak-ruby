@@ -103,7 +103,12 @@ body {
 }
 
 .mt-2 {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+.my-2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .submit {
