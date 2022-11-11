@@ -29,7 +29,7 @@
               <li class="d-flex">
                 <h4><%= comment.author.name %> :
                   <% if can? :destroy, User %>
-                    <%= button_to "Delete", single_post_path(post.id), remote: true, data: { confirm: 'Are you sure?' }, method: :delete %>
+                    <%= button_to "Delete", single_comment_path(comment.id), remote: true, data: { confirm: 'Are you sure?' }, method: :delete %>
                   <% end %>
                 </h4>
                 <p class="ml-1">
