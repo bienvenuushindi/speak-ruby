@@ -27,5 +27,4 @@ class User < ApplicationRecord
   def skip_conf!
     skip_confirmation! if Rails.env.development?
   end
-
 end

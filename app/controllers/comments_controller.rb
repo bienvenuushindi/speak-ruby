@@ -28,7 +28,6 @@ class CommentsController < ApplicationController
     redirect_back(fallback_location: users_path)
   end
 
-
   private
 
   def comment_params
