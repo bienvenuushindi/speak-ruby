@@ -146,6 +146,13 @@ body {
   color: #b00100;
 }
 
+.portrait {
+  width: 9rem;
+  height: 6rem;
+  margin: 0 10px 0 0;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 765px) {
   .container {
     width: 50%;
@@ -169,12 +176,5 @@ body {
   .card {
     padding: 1rem 0;
     margin-top: 1rem;
-  }
-
-  .portrait {
-    width: 9rem;
-    height: 6rem;
-    margin: 0 10px 0 0;
-    border-radius: 5px;
   }
 }
