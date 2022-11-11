@@ -1,6 +1,6 @@
 <div class="list-box">
   <h1 class="leading header">ADD POST</h1>
-  <%= form_with model: post, url: user_posts_path(:current_user.id), method: :post, local: true, scope: :post do |f| %>
+  <%= form_with model: post, url: user_posts_path(current_user.id), method: :post, local: true, scope: :post do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'input-control' %>
