@@ -1,6 +1,4 @@
 class Api::V1::PostsController < ApplicationController
-  
-
   def index
     @posts = Post.where(user_id: read_user_id)
     render json: @posts
@@ -15,6 +13,4 @@ class Api::V1::PostsController < ApplicationController
   def read_user_id
     params[:user_id]
   end
-
-
 end
