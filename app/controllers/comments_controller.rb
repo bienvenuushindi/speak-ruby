@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def new
     current_user
     comment = Comment.new
@@ -11,7 +12,7 @@ class CommentsController < ApplicationController
     new_comment = Post.find(params[:post_id]).comments.new(text: comment_params[:text], author: current_user)
     if new_comment.save
       flash[:success] = 'Comment saved successfully'
-      redirect_to single_post_path(current_user.id, params[:post_id])
+      redirect_to single_post_path(params[:post_id])
     else
       flash.now[:error] = 'Error: Comment could not be saved'
       render :new, locals: { comment: new_comment }
