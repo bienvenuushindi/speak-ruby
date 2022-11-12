@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:id])
   end
@@ -26,6 +28,15 @@ class PostsController < ApplicationController
       # render new
       render :new, locals: { post: new_post }
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @post.author.decrement!(:posts_counter)
+    @post.destroy
+    @post.save
+    flash[:success] = 'You have deleted this post!'
+    redirect_back(fallback_location: users_path)
   end
 
   private

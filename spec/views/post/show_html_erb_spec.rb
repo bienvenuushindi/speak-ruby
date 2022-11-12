@@ -12,7 +12,7 @@ RSpec.describe 'Post', type: :feature do
       @my_post.comments.create(text: 'My third comment', author: @user)
       @my_post.comments.create(text: 'My fourth comment', author: @user)
       @my_post.comments.create(text: 'My fifth comment', author: @user)
-      visit single_post_path(@user, @my_post)
+      visit single_post_path(@my_post)
     end
     # I can see the post's title.
     it 'should show the post\'s title' do

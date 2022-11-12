@@ -1,7 +1,7 @@
 <div class="d-flex gap-1 justify-content-end">
   <div>Comments <span><%= post.comments_counter %></span></div>
   <div>
-    <%= link_to user_posts_likes_path(params[:id], post.id) do %>
+    <%= link_to user_posts_likes_path(post.id) do %>
       <button class="btn btn-default btn-sm mx-auto">
         Likes <span><%= post.likes_counter %></span>
       </button>

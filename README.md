@@ -6,6 +6,9 @@
 ## Built With
 - Languages: Ruby
 - Framework: Ruby on Rails
+## ERDiagram:
+
+![blog_app_diagram](https://github.com/a-laarabi/Blog/blob/api/app/assets/images/blog_app_erd.png)
 
 ## Getting started
 To get a local copy of this exercise, Please follow these simple example steps.
@@ -37,6 +40,15 @@ rails s
 👤 **Ushindi Bienvenu**
 - GitHub: [@usbbush](https://github.com/bienvenuushindi)
 - LinkedIn: [@usbbush](https://www.linkedin.com/in/usbbush/)
+
+👤 **Michael Adetunji**
+- GitHub: [@gtherealadetunji](https://github.com/therealadetunji)
+- LinkedIn: [https://www.linkedin.com/in/adetunji-michael/](https://linkedin.com/in/adetunji-michael)
+
+👤 **Anasse LAARABI**
+- GitHub: [@a-laarabi](https://github.com/a-laarabi)
+- Twitter: [@LusindisoNt](https://twitter.com/AnasseLaarabi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/a-laarabi/)
 
 ## 🤝 Contributing
 

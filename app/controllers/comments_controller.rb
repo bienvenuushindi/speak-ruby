@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def new
     current_user
     comment = Comment.new
@@ -11,11 +12,20 @@ class CommentsController < ApplicationController
     new_comment = Post.find(params[:post_id]).comments.new(text: comment_params[:text], author: current_user)
     if new_comment.save
       flash[:success] = 'Comment saved successfully'
-      redirect_to single_post_path(current_user.id, params[:post_id])
+      redirect_to single_post_path(params[:post_id])
     else
       flash.now[:error] = 'Error: Comment could not be saved'
       render :new, locals: { comment: new_comment }
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.post.decrement!(:comments_counter)
+    @comment.destroy
+    @comment.save
+    flash[:success] = 'You have deleted this comment!'
+    redirect_back(fallback_location: users_path)
   end
 
   private

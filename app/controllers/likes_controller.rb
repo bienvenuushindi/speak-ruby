@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  load_and_authorize_resource
   def create
     like = Post.find(params[:post_id]).likes.new(author: current_user)
     if like.save
