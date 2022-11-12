@@ -38,6 +38,14 @@ rails s
 - GitHub: [@usbbush](https://github.com/bienvenuushindi)
 - LinkedIn: [@usbbush](https://www.linkedin.com/in/usbbush/)
 
+👤 **Michael Adetunji**
+- GitHub: [@gtherealadetunji](https://github.com/therealadetunji)
+- LinkedIn: [https://www.linkedin.com/in/adetunji-michael/](https://linkedin.com/in/adetunji-michael)
+👤 **Anasse LAARABI**
+- GitHub: [@a-laarabi](https://github.com/a-laarabi)
+- Twitter: [@LusindisoNt](https://twitter.com/AnasseLaarabi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/a-laarabi/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
