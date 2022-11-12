@@ -1,4 +1,4 @@
-class Api::V1::CommentsController < ApplicationController
+class Api::V1::CommentsController < ApiController
   def index
     @comments = Comment.where(post_id: read_post_id)
     render json: @comments

@@ -1,4 +1,4 @@
-class Api::V1::PostsController < ApplicationController
+class Api::V1::PostsController < ApiController
   def index
     @posts = Post.where(user_id: read_user_id)
     render json: @posts
