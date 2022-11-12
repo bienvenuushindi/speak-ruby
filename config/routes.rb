@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "posts/:post_id/likes", to: "likes#create", as: 'user_posts_likes'
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      post :auth, to: "authentication#create"
       resources :users, only: [:index] do
         resources :posts, only: [:index]
       end
