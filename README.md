@@ -6,6 +6,9 @@
 ## Built With
 - Languages: Ruby
 - Framework: Ruby on Rails
+## ERDiagram:
+
+![blog_app_diagram](https://github.com/a-laarabi/Blog/blob/api/app/assets/images/blog_app_erd.png)
 
 ## Getting started
 To get a local copy of this exercise, Please follow these simple example steps.
