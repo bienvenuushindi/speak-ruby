@@ -4,6 +4,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 ruby '3.1.2'
 # Use JWT gem for token-based authentication
 gem 'jwt'
+
+gem 'rswag'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
@@ -79,4 +81,5 @@ end
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'rswag-specs'
 end
